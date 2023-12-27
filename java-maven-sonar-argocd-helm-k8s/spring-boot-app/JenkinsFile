@@ -28,7 +28,7 @@ pipeline {
       environment {
         DOCKER_IMAGE = "433184488168.dkr.ecr.us-east-1.amazonaws.com/sekhar:latest/ultimate-cicd:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile"
-        REGISTRY_CREDENTIALS = aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 433184488168.dkr.ecr.us-east-1.amazonaws.com
+        REGISTRY_CREDENTIALS = "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 433184488168.dkr.ecr.us-east-1.amazonaws.com"
       }
       steps {
         script {
