@@ -1,7 +1,12 @@
-node {
-    stage('Checkout') {
-      steps {
-        git branch: 'main', credentialsId: 'git_cred', url: 'https://github.com/gmunisekhar/Jenkins-Zero-To-Hero.git'
-      }
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    checkout('git_cred', url: 'https://github.com/gmunisekhar/Jenkins-Zero-To-Hero.git')
+                }
+            }
+        }
 }
 }
